@@ -15,13 +15,38 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-flex">
         <div class="navbar">
-            <h1>Welcome {{request.session.displayname}}</h1>
-            <a href="">Edit User Info</a>
-            <a href="/logout">Logout</a>
+            <h3 class="title">Welcome {{request.session.displayname}}</h3>
+            <button id="edit" class="btn btn-sm btn-danger">Change Display Name</button>
+            <button class="btn btn-sm btn-danger"><a class="white" href="/logout">Logout</a></button>
 
         </div>
+
+
+        <div class="bg-modal">
+            <div class="modal-content">
+                <div class="close">+</div>
+                <h4 class="title">Change your Display Name</h4>
+
+                <form id="Edit" action="/editdisplayname" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <p class="text-danger">{{ message.DisplayName }}</p>
+                        <label for="DisplayName">Display Name</label>
+                        <input type="text" class="form-control" id="DisplayName" name="DisplayName" value={{user.displayname}}>
+                        <input type="submit" class="btn btn-sm btn-dark mt-2" value="Change Display Name">
+                    </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+
     </div>
 </body>
 

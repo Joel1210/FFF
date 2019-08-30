@@ -11,8 +11,11 @@ def dashboard(request):
     if 'id' not in request.session:
         return redirect('/')
 
-    
-    return render(request, 'user/dashboard.html')
+    user = User.objects.get(id = request.session['id'])
+    context = {
+        'user' : user
+    }    
+    return render(request, 'user/dashboard.html', context)
 
 
 def register(request):
@@ -65,4 +68,20 @@ def logout(request):
     del request.session['firstname']
     del request.session['lastname']
     return redirect('/')
+
+def editDN(request):
+    if request.method == "POST":
+        errors = User.objects.validate_displayChange(request.POST)
+        if len(errors) > 0:
+            context = {
+                'message' : errors
+            }
+           
+            return render(request, 'user/dashboard.html', context)
+        else:
+            user = User.objects.get(id= request.session['id'])
+            user.displayname = request.POST['DisplayName']
+            user.save()
+            request.session['displayname'] = request.POST['DisplayName']
+            return redirect('/dashboard')
 

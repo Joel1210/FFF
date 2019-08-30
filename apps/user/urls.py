@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^invalid_registration$', views.register),
     url(r'^invalid_login$', views.login),
     url(r'^dashboard$', views.dashboard),
-    url(r'^logout$', views.logout)
+    url(r'^logout$', views.logout),
+    url(r'^editdisplayname$', views.editDN)
 
 ]

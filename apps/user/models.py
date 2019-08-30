@@ -49,7 +49,14 @@ class UserManager(models.Manager):
             errors['Login'] = "Invalid email or password"
 
         return errors
+    def validate_displayChange(self, postData):
+        errors = {}
+        if len(postData['DisplayName']) > 15:
+            errors['DisplayName'] = "Please keep your Display Name under 15 characters"
 
+        if len(postData['DisplayName']) < 1:
+            errors['DisplayName'] = "Required"
+        return errors
 
 class User(models.Model):
     first_name = models.CharField(max_length=100)
