@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    font-family: "Lucida Console", Verdana, Arial;
+    color: #4285f4;
+    border-bottom: solid greenyellow 2px;
+}
+
+.tiny {
+    font-size: 8px;
+    color: gray;
+}
