@@ -11,42 +11,42 @@
     <title>Register/Login</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
-    <script src="{% static 'user/js/script.js' %}"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="mb-3 title">FootballMania (Not Soccer)   JOIN THE FUN TODAY!</h1>
+        <h1 class="mb-3 title">FootballMania (Not Soccer) JOIN THE FUN TODAY!</h1>
         <div class="row mt-2">
             <div class="col-6">
                 <h2>Register</h2>
                 <form id="Register" action="/invalid_registration" method="post">
                     {% csrf_token %}
                     <div class="form-group">
-                       
+
                         <p class="text-danger">{{ message.FirstName}}</p>
-                        
-                        
+
+
                         <label for="FirstName">First Name</label>
                         <input type="text" class="form-control col-6" id="FirstName" name="FirstName"
                             placeholder="Insert First Name">
                     </div>
                     <div class="form-group">
-                       
+
                         <p class="text-danger">{{ message.LastName }}</p>
-                
+
                         <label for="LastName">Last Name</label>
                         <input type="text" class="form-control col-6" id="LastName" name="LastName"
                             placeholder="Insert Last Name">
                     </div>
                     <div class="form-group">
-                            <p class="text-danger">{{ message.DisplayName }}</p>
+                        <p class="text-danger">{{ message.DisplayName }}</p>
+                        <p class="tiny">All spaces will be deleted. 15 characters max</p>
                         <label for="DisplayName">Display Name</label>
                         <input type="text" class="form-control col-6" id="DisplayName" name="DisplayName"
                             placeholder="Choose a Display Name">
                     </div>
                     <div class="form-group">
-                            <p class="text-danger">{{ message.Email }}</p>
+                        <p class="text-danger">{{ message.Email }}</p>
                         <label for="Email">Email</label>
                         <input type="text" class="form-control col-6" id="Email" name="Email"
                             placeholder="Insert Email">
