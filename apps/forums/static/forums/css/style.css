@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.title {
+    font-family: "Lucida Console", Verdana, Arial;
+    color: #4285f4;
+    border-bottom: solid greenyellow 2px;
+}
+
+.forum{
+    height: 80vh;
+    overflow: auto;
+    width: 90%;
+    background-color: whitesmoke;
+}
+
+textarea{
+    width: 90%;
+    height: 10vh;
+}
+
+p{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    word-break: break-all;
+}
+
+.small{
+    font-size: 10px;
+}
+
+.green{
+    color: green;
+}
+
+
+/* table tr:nth-child(odd) td{
+}
+table tr:nth-child(even) td{
+}
